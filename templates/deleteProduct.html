@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Product Catalogue Management</title>
+    </head>
+
+    <body>
+        <h1>Product Catalogue Management - Delete Product</h1>
+        <p><a href="/">Home</a></p>
+        <p>
+            <form action="/deleteProduct/{{ product[0] }}" method="post">
+                <table width="100%" border="1" cellpadding="10" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td>Product ID:</td>
+                            <td>{{ product[0] }}</td>
+                        </tr>
+                        <tr>
+                            <td>SKU Code:</td>
+                            <td>{{ product[1] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Product Name:</td>
+                            <td>{{ product[2] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Product Description:</td>
+                            <td>
+                                <pre>{{ product[3] }}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Brand:</td>
+                            <td>{{ product[4] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Model:</td>
+                            <td>{{ product[5] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Category:</td>
+                            <td>{{ product[6] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Quantity on Hand</td>
+                            <td>{{ product[7] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Unit Price:</td>
+                            <td>${{ product[8] }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="submit" value="Delete Product"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </p>
+    </body>
+
+</html>

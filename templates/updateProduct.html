@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Product Catalogue Management</title>
+    </head>
+
+    <body>
+        <h1>Product Catalogue Management - Update Product</h1>
+        <p><a href="/">Home</a></p>
+        <p>
+            <form action="/updateProduct/{{ product[0] }}" method="post">
+                <table width="100%" border="1" cellpadding="10" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td>Product ID:</td>
+                            <td>{{ product[0] }}</td>
+                        </tr>
+                        <tr>
+                            <td>SKU Code:</td>
+                            <td><input type="text" name="sku_code" required="required" value="{{ product[1] }}"></td>
+                        </tr>
+                        <tr>
+                            <td>Product Name:</td>
+                            <td><input type="text" name="product_name" required="required" value="{{ product[2] }}"></td>
+                        </tr>
+                        <tr>
+                            <td>Product Description:</td>
+                            <td>
+                                <textarea name="product_description" rows="5" cols="50">{{ product[3] }}</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Brand:</td>
+                            <td><input type="text" name="brand" required="required" value="{{ product[4] }}"></td>
+                        </tr>
+                        <tr>
+                            <td>Model:</td>
+                            <td><input type="text" name="model" required="required" value="{{ product[5] }}"></td>
+                        </tr>
+                        <tr>
+                            <td>Category:</td>
+                            <td>
+                                <select name="category" required="required">
+                                    <option value="Smartphones" {% if product[6] == "Smartphones" %} {{ "selected" }} {% endif %}>Smartphones</option>
+                                    <option value="Laptops" {% if product[6] == "Laptops" %} {{ "selected" }} {% endif %}>Laptops</option>
+                                    <option value="Headphones" {% if product[6] == "Headphones" %} {{ "selected" }} {% endif %}>Headphones</option>
+                                    <option value="Smartwatches" {% if product[6] == "Smartwatches" %} {{ "selected" }} {% endif %}>Smartwatches</option>
+                                    <option value="Televisions" {% if product[6] == "Televisions" %} {{ "selected" }} {% endif %}>Televisions</option>
+                                    <option value="Cameras" {% if product[6] == "Cameras" %} {{ "selected" }} {% endif %}>Cameras</option>
+                                    <option value="Gaming" {% if product[6] == "Gaming" %} {{ "selected" }} {% endif %}>Gaming</option>
+                                    <option value="Kitchen" {% if product[6] == "Kitchen" %} {{ "selected" }} {% endif %}>Kitchen</option>
+                                    <option value="Fitness" {% if product[6] == "Fitness" %} {{ "selected" }} {% endif %}>Fitness</option>
+                                    <option value="Books" {% if product[6] == "Books" %} {{ "selected" }} {% endif %}>Books</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Quantity on Hand</td>
+                            <td> <input type="number" name="quantity_on_hand" required="required" value="{{ product[7] }}"></td>
+                        </tr>
+                        <tr>
+                            <td>Unit Price:</td>
+                            <td><input type="number" name="unit_price" step=".01" required="required" value="{{ product[8] }}"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="submit" value="Update Product"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </p>
+    </body>
+
+</html>
